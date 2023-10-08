@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<app-pokemon-list>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <!--
+</app-pokemon-list>
+<!--
   <input type="text" [(ngModel)]="name">
   <h1>{{name}}</h1>
   
 -->
-  <input #myInput id="5" type="text" [(ngModel)]="title">
-  <div *ngIf="title!=''">
-    <button (click)="logValue(myInput.value)">Log Value</button>
-  </div>
-  <ol>
-    <li *ngFor="let item of items">
-      <h1>{{item.id}}</h1>
-      <p>{{item.name}}</p>
-    </li>
-  </ol>
-</body>
-
-</html>
+<input #myInput id="5" type="text" [(ngModel)]="title">
+<div *ngIf="title!=''">
+  <button (click)="logValue(myInput.value)">Log Value</button>
+</div>
+<ol>
+  <li *ngFor="let item of items">
+    <h1>{{item.id}}</h1>
+    <p>{{item.name}}</p>
+  </li>
+</ol>
