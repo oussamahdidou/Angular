@@ -18,6 +18,7 @@ export class PokemonListComponent implements OnInit {
    */
   constructor() {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.log('component starting');
+    console.log(this.users);
   }
 }
