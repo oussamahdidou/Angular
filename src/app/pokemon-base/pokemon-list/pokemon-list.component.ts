@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+//import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css'],
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements OnInit {
   users = [
     { name: 'oussama', id: '1' },
     { name: 'ahmed', id: '2' },
@@ -16,5 +17,7 @@ export class PokemonListComponent {
    *
    */
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }
