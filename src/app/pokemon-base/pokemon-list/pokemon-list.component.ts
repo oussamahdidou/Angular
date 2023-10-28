@@ -8,7 +8,7 @@ import { pokemon } from 'src/app/models/pokemon';
   styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-  users: pokemon[] = [
+  items: pokemon[] = [
     { name: 'oussama', id: '1' },
     { name: 'ahmed', id: '2' },
     { name: 'joedoe', id: '3' },
@@ -20,6 +20,6 @@ export class PokemonListComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {
     console.log('component starting');
-    console.log(this.users);
+    console.log(this.items);
   }
 }
