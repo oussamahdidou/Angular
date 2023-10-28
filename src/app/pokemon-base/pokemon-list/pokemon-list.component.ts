@@ -1,5 +1,6 @@
 //import { Component } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-  users = [
+  users: pokemon[] = [
     { name: 'oussama', id: '1' },
     { name: 'ahmed', id: '2' },
     { name: 'joedoe', id: '3' },

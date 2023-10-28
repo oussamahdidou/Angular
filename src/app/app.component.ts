@@ -2,10 +2,8 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
-export interface pokemon {
-  name: string;
-  id: string;
-}
+import { pokemon } from './models/pokemon';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
