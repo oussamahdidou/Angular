@@ -2,6 +2,10 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+export interface pokemon {
+  name: string;
+  id: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +14,7 @@ import Swal from 'sweetalert2';
 export class AppComponent {
   title: string;
   name: string = '';
-  items = [
+  items: pokemon[] = [
     { name: 'oussama', id: '1' },
     { name: 'ahmed', id: '2' },
     { name: 'joedoe', id: '3' },
