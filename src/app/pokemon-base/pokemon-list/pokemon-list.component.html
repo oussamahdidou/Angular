@@ -1,4 +1,4 @@
-<app-detail *ngFor="let item of items" [detailitem]="item"></app-detail>
+<detail *ngFor="let item of items" [detailitem]="item" (remove)="handleremove($event)"></detail>
 <table class="table table-striped">
     <thead>
         <tr>

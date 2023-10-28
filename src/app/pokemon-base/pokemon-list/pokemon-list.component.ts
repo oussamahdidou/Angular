@@ -22,4 +22,7 @@ export class PokemonListComponent implements OnInit {
     console.log('component starting');
     console.log(this.items);
   }
+  handleremove(event: pokemon) {
+    this.items = this.items.filter((item) => item !== event);
+  }
 }
