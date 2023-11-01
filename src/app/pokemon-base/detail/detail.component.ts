@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { pokemon } from 'src/app/models/pokemon';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'detail',
@@ -15,6 +16,19 @@ export class DetailComponent implements OnInit {
     console.log(this.detailitem);
   }
   removeitem() {
-    this.remove.emit(this.detailitem);
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.remove.emit(this.detailitem);
+        Swal.fire('Saved!', '', 'success');
+      } else {
+        Swal.fire('Changes are not saved', '', 'info');
+      }
+    });
   }
 }
