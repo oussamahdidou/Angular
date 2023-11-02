@@ -16,7 +16,14 @@ export class PokemonListComponent implements OnInit {
   constructor(private items_service: Items_serviceService) {}
   ngOnInit(): void {
     console.log('component starting');
-    this.items = this.items_service.getitems();
+    this.items_service.getitems().subscribe(
+      (response: pokemon[]) => {
+        this.items = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
     console.log(this.items);
   }
   handleremove(event: pokemon) {
