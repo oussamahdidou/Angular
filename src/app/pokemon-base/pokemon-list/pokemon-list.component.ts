@@ -1,6 +1,7 @@
 //import { Component } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { pokemon } from 'src/app/models/pokemon';
+import { Items_serviceService } from 'src/app/services/items_service.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,18 +9,14 @@ import { pokemon } from 'src/app/models/pokemon';
   styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-  items: pokemon[] = [
-    { name: 'oussama', id: '1' },
-    { name: 'ahmed', id: '2' },
-    { name: 'joedoe', id: '3' },
-    { name: 'unknown', id: '4' },
-  ];
   /**
    *
    */
-  constructor() {}
+  items!: pokemon[];
+  constructor(private items_service: Items_serviceService) {}
   ngOnInit(): void {
     console.log('component starting');
+    this.items = this.items_service.getitems();
     console.log(this.items);
   }
   handleremove(event: pokemon) {
