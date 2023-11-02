@@ -1,0 +1,8 @@
+{
+  "pokemon": [
+    { "name": "oussama", "id": "1" },
+    { "name": "ahmed", "id": "2" },
+    { "name": "joedoe", "id": "3" },
+    { "name": "unknown", "id": "4" }
+  ]
+}
