@@ -22,12 +22,12 @@
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label"></label>
             <div class="col-8">
-                <input type="text" [(ngModel)]="item.name" class="form-control" name="name" id="inputName"
-                    placeholder="Name">
+                <input #PokemonName="ngModel" type="text" [(ngModel)]="item.name" class="form-control" name="name"
+                    id="inputName" placeholder="Name">
             </div>
             <div class="form-check">
-                <input (ngModelChange)="changeradio($event)" class="form-check-input" type="radio" name="id" [value]="1"
-                    id="" [(ngModel)]="item.id">
+                <input #PokemonName="ngModel" (ngModelChange)="changeradio($event)" class="form-check-input"
+                    type="radio" name="id" [value]="1" id="" [(ngModel)]="item.id">
                 <label class="form-check-label" for="">
                     Default radio
                 </label>
