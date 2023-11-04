@@ -34,7 +34,7 @@
             </div>
             <div class="form-check">
                 <input (ngModelChange)="changeradio($event)" [checked] class="form-check-input" type="radio" name="id"
-                    [value]="2" [(ngModel)]="item.id" id="">
+                    [value]="2" [(ngModel)]="item.id" id="" #PokemonName="ngModel">
                 <label class="form-check-label" for="">
                     Default checked radio
                 </label>
@@ -44,4 +44,5 @@
     </form>
     MODEL: {{item|json}}
     FORM:{{form.value|json}}
+    <div *ngIf="!PokemonName.pristine"> Error :</div>
 </div>
