@@ -12,6 +12,7 @@ export class PokemonListComponent implements OnInit {
   /**
    *
    */
+  item!: pokemon;
   items!: pokemon[];
   constructor(private items_service: Items_serviceService) {}
   ngOnInit(): void {
