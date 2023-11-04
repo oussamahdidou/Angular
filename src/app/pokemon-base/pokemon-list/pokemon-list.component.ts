@@ -31,4 +31,7 @@ export class PokemonListComponent implements OnInit {
   handleremove(event: pokemon) {
     this.items = this.items.filter((item) => item !== event);
   }
+  changeradio(event: any) {
+    console.log(event);
+  }
 }
