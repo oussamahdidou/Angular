@@ -17,7 +17,7 @@
     </tbody>
 </table>
 <div class="container">
-    <form #form>
+    <form #form="ngForm">
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label"></label>
             <div class="col-8">
@@ -38,3 +38,5 @@
         </div>
     </form>
 </div>
+MODEL: {{item|json}}
+FORM:{{form.value|json}}
