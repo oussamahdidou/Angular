@@ -12,7 +12,7 @@ export class PokemonListComponent implements OnInit {
   /**
    *
    */
-  item!: pokemon;
+  item: pokemon = { id: '', name: '' };
   items!: pokemon[];
   constructor(private items_service: Items_serviceService) {}
   ngOnInit(): void {
