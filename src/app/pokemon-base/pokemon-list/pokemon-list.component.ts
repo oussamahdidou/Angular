@@ -20,6 +20,7 @@ export class PokemonListComponent implements OnInit {
     this.items_service.getitems().subscribe(
       (response: pokemon[]) => {
         this.items = response;
+        console.log(this.items);
       },
       (error) => {
         console.error(error);
