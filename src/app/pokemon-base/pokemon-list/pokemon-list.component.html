@@ -39,13 +39,15 @@
                     Default checked radio
                 </label>
             </div>
-            <select [(ngModel)]="item" name="item">
-                <option *ngFor="let item of items" [value]="item">{{item}}</option>
-            </select>
+
         </div>
+        <button class="btn btn-dark" type="submit" [disabled]="PokemonName.pristine">
+            Save
+        </button>
 
     </form>
     MODEL: {{item|json}}
     FORM:{{form.value|json}}
-    <div *ngIf="!PokemonName.pristine"> Error :</div>
+    <div *ngIf=" !PokemonName.pristine"> Error :
+    </div>
 </div>
