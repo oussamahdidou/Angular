@@ -18,7 +18,7 @@
 </table>
 
 <div class="container">
-    <form #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="handleform(item)">
         <div class="mb-3 row">
             <label for="inputName" class="col-4 col-form-label"></label>
             <div class="col-8">
@@ -41,7 +41,7 @@
             </div>
 
         </div>
-        <button class="btn btn-dark" type="submit" [disabled]="PokemonName.pristine">
+        <button class="btn btn-dark" type="submit" [disabled]="!form.valid">
             Save
         </button>
 

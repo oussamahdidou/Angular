@@ -6,7 +6,13 @@ import { DetailComponent } from './detail/detail.component';
 import { Items_serviceService } from '../services/items_service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { Router, Routes } from '@angular/router';
+const routes: Routes = [
+  {
+    path: '',
+    children: [{ path: '', component: PokemonListComponent }, { path: ':id' }],
+  },
+];
 @NgModule({
   declarations: [PokemonListComponent, ListComponent, DetailComponent],
   imports: [CommonModule, HttpClientModule, FormsModule],

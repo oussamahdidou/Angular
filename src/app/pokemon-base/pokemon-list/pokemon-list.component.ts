@@ -34,4 +34,8 @@ export class PokemonListComponent implements OnInit {
   changeradio(event: any) {
     console.log(event);
   }
+  handleform(form: any) {
+    console.log(form);
+    this.items.push(form);
+  }
 }
