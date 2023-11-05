@@ -7,10 +7,14 @@ const url = 'http://localhost:3000/pokemon';
   providedIn: 'root',
 })
 export class Items_serviceService {
+  apiUrl = 'http://localhost:3000/pokemon';
   constructor(private request: HttpClient) {
     this.request = request;
   }
   getitems(): Observable<pokemon[]> {
     return this.request.get<pokemon[]>(url);
+  }
+  getitem(id: string): Observable<pokemon> {
+    return this.request.get<pokemon>(this.apiUrl + '/' + id);
   }
 }

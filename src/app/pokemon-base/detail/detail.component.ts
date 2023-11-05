@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { pokemon } from 'src/app/models/pokemon';
+import { Items_serviceService } from 'src/app/services/items_service.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,11 +11,25 @@ import Swal from 'sweetalert2';
 })
 export class DetailComponent implements OnInit {
   @Input()
-  detailitem!: pokemon;
+  detailitem: pokemon = { id: '', name: '' };
   @Output() remove: EventEmitter<any> = new EventEmitter<any>();
-  constructor() {}
+  constructor(
+    private items_service: Items_serviceService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
-    console.log(this.detailitem);
+    this.route.params.subscribe((data: Params) => {
+      this.items_service.getitem(data['id']).subscribe(
+        (response: pokemon) => {
+          this.detailitem = response;
+          console.log(this.detailitem);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    });
   }
   removeitem() {
     Swal.fire({
