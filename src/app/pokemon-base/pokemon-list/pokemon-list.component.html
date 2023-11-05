@@ -39,6 +39,9 @@
                     Default checked radio
                 </label>
             </div>
+            <select [(ngModel)]="item" name="item">
+                <option *ngFor="let item of items" [value]="item">{{item}}</option>
+            </select>
         </div>
 
     </form>
