@@ -34,12 +34,7 @@ export class PokemonListComponent implements OnInit {
         }
       );
     });
-    this.items = [
-      { name: 'oussama', id: '1' },
-      { name: 'ahmed', id: '2' },
-      { name: 'joedoe', id: '3' },
-      { name: 'unknown', id: '4' },
-    ];
+
     console.log(this.items);
   }
   Back(): void {

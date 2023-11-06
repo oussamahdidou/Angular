@@ -17,4 +17,7 @@ export class Items_serviceService {
   getitem(id: string): Observable<pokemon> {
     return this.request.get<pokemon>(this.apiUrl + '/' + id);
   }
+  deletePokemon(id: string) {
+    return this.request.delete(`${this.apiUrl}/${id}`);
+  }
 }

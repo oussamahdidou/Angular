@@ -26,12 +26,12 @@ export class DetailComponent implements OnInit {
           console.log(this.detailitem);
         },
         (error) => {
-          console.error(error);
+          this.router.navigate(['error']);
         }
       );
     });
   }
-  removeitem() {
+  removeitem(id: string) {
     Swal.fire({
       title: 'Do you want to save the changes?',
       icon: 'info',
@@ -40,8 +40,17 @@ export class DetailComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        this.remove.emit(this.detailitem);
-
+        //  this.remove.emit(this.detailitem);
+        this.items_service.deletePokemon(id).subscribe(
+          () => {
+            console.log(`Pokemon with ID ${id} deleted successfully.`);
+            // Handle success or navigate to another page if needed
+          },
+          (error) => {
+            console.error('Error deleting Pokemon:', error);
+            // Handle error, show error message, etc.
+          }
+        );
         Swal.fire('Saved!', '', 'success');
         this.router.navigate(['/pokemon']);
       } else {
