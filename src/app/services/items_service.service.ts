@@ -20,4 +20,7 @@ export class Items_serviceService {
   deletePokemon(id: string) {
     return this.request.delete(`${this.apiUrl}/${id}`);
   }
+  addPokemon(pokemom: pokemon): Observable<pokemon> {
+    return this.request.post<pokemon>(this.apiUrl, pokemom);
+  }
 }

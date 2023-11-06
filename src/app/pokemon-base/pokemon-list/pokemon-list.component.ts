@@ -48,6 +48,11 @@ export class PokemonListComponent implements OnInit {
   }
   handleform(form: any) {
     console.log(form);
-    this.items.push(form);
+    this.items_service.addPokemon(form).subscribe(
+      () => {},
+      (error) => {
+        this.router.navigate(['error']);
+      }
+    );
   }
 }
