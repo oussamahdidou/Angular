@@ -41,7 +41,9 @@ export class DetailComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         this.remove.emit(this.detailitem);
+
         Swal.fire('Saved!', '', 'success');
+        this.router.navigate(['/pokemon']);
       } else {
         Swal.fire('Changes are not saved', '', 'info');
       }
